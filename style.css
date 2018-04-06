@@ -9,7 +9,7 @@ p {
     font-family: 'Playfair Display', serif;
 }
 
- .italic{
+.italic{
 	 font-weight: bold;
  }
 
@@ -25,7 +25,14 @@ body{
 		border-color: #ffffff;
 
 	}
+	article {
+	  margin-bottom: 0.7em;
+	  border-bottom: 1px solid #ccc;
+	}
 
+	article:last-of-type {
+	  border-bottom: none;
+	}
 /*#nav {
     padding: 0;
 }*/
@@ -54,7 +61,7 @@ body{
 }
 
 /*Navigation styles*/
-.navigation{
+.navigation {
 	list-style: none;
 	margin: 0;
 	background: gray;
@@ -95,16 +102,113 @@ nav ul {
   display: flex;
   flex-flow: column;
 }
+article {
+  margin-bottom: 0.7em;
+  border-bottom: 1px solid #ccc;
+}
+
 
 /*header, article, aside, footer {
   flex: 1 100%;
   padding: 10px;
 }
 /*These styles activate when the page is larger than 800px wide*/
+@media screen and (min-width: 450px) {
 
+		nav ul {
+				flex-flow: row;
+				justify-content: space-between;
+		}
+
+}
+@media screen and (min-width: 600px) {
+
+    #container {
+        width: 80%;
+    }
+
+    .authorbox img {
+      display: block;
+      width: 100%;
+      margin-top: 0.5em;
+    }
+
+    .authorbox {
+      width: 25%;
+      max-width: 200px;
+      float: left;
+      margin-right: 20px;
+    }
+}
 @media (min-width:800px) {
+	.navigation {
+			flex-flow: row wrap;
+			justify-content: flex-end;
+	}
 
-    .navigation {
+	.navigation a {
+			border: none;
+	}
+
+	.navigation a:hover {
+		background: black;
+	}
+
+	article {
+			display: flex;
+			flex-flow: row;
+			flex-wrap: wrap;
+	}
+	.image {
+			width: 100%;
+			margin-right: 10px;
+	}
+
+	.story {
+			width: 45%;
+	}
+
+	.first {
+			margin-top: 0;
+	}
+}
+@media screen and (min-width:1000px) {
+  article {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas:
+        "a b b"
+        "a c c";
+  }
+	.authorbox {
+    width: 100%;
+    grid-area: a;
+  }
+
+  .section1 {
+    grid-area: b;
+		margin-top: 0;
+  }
+
+  .image {
+		grid-area:c;
+    width: 100%;
+  }
+}
+
+/*@media screen and (min-width:1200px) {
+  article {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas:
+        "a b b e"
+        "c c c ."
+        ". d d .";
+  }
+}
+    /*.navigation {
         flex-flow: row wrap;
         justify-content: flex-end;
     }
@@ -144,7 +248,7 @@ nav ul {
 		/*These styles apply to the floated image technique*/
 
 
-             img {
+             /*img {
                  width: 45%;
                  float: left;
                  margin-right: 10px;
@@ -158,14 +262,14 @@ nav ul {
 
      /*These styles apply to the Flexbox image technique */
 
-     article {
+     /*article {
          display: flex;
          flex-flow: row;
          flex-wrap: wrap;
      }
 
      /*This code is for the first image attempt -- the object-fit property*/
-     img {
+     /*img {
          width: 100%;
          object-fit: contain;
      }
@@ -183,34 +287,11 @@ nav ul {
          margin-top: 0;
      }
 
-		 @media screen and (min-width: 450px) {
 
-		     nav ul {
-		         flex-flow: row;
-		         justify-content: space-between;
-		     }
 
-		 }
-		 @media screen and (min-width: 600px) {
 
- #container {
-        width: 80%;
-    }
-		.authorbox {
-      width: 25%;
-      max-width: 200px;
-      float: left;
-      margin-right: 20px;
-    }
-	}
-		@media screen and (min-width: 800px) {
-    .navigation {
-      margin-right: auto;
-    }
-		nav ul li {
-      margin: 5px;
-    }
-}
+
+
 @media screen and (min-width:1000px) {
   article {
     display: grid;
@@ -221,14 +302,14 @@ nav ul {
         "c c e"
         ". d d";
   }
-	 .authorbox {
+.authorbox {
       width: 25%;
       max-width: 200px;
       float: left;
       margin-right: 20px;
     }
 
-	.section1 {
+.section1 {
     grid-area: a;
   }
 	.section1 {
