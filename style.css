@@ -20,17 +20,17 @@ h1 {
 body{
 	background-color:#ebe3ce;
 }
-/*#container {
-    width: 95%;
+#container {
+    width: 80%;
 		border-color: #ffffff;
-    margin: 0 auto;
+
 	}
 
-#nav {
+/*#nav {
     padding: 0;
-}
+}*/
 
-#nav li {
+/*#nav li {
 	list-style-type: none;
 	float: left;
     margin: 0;
@@ -87,8 +87,16 @@ img {
     display: flex;
     flex-flow: row wrap;
 }
+.title {
+  display: flex;
+  justify-content: space-between;
+}
+nav ul {
+  display: flex;
+  flex-flow: column;
+}
 
-header, article, aside, footer {
+/*header, article, aside, footer {
   flex: 1 100%;
   padding: 10px;
 }
@@ -132,6 +140,7 @@ header, article, aside, footer {
     footer {
         order: 4;
     }
+	}
 		/*These styles apply to the floated image technique*/
 
 
@@ -157,12 +166,12 @@ header, article, aside, footer {
 
      /*This code is for the first image attempt -- the object-fit property*/
      img {
-         width: 45%;
+         width: 100%;
          object-fit: contain;
      }
 
      .image {
-         width: 45%;
+         width: 100%;
          margin-right: 10px;
      }
 
@@ -173,4 +182,67 @@ header, article, aside, footer {
      .first {
          margin-top: 0;
      }
- 
+
+		 @media screen and (min-width: 450px) {
+
+		     nav ul {
+		         flex-flow: row;
+		         justify-content: space-between;
+		     }
+
+		 }
+		 @media screen and (min-width: 600px) {
+
+ #container {
+        width: 80%;
+    }
+		.authorbox {
+      width: 25%;
+      max-width: 200px;
+      float: left;
+      margin-right: 20px;
+    }
+	}
+		@media screen and (min-width: 800px) {
+    .navigation {
+      margin-right: auto;
+    }
+		nav ul li {
+      margin: 5px;
+    }
+}
+@media screen and (min-width:1000px) {
+  article {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas:
+        "a b b"
+        "c c e"
+        ". d d";
+  }
+	 .authorbox {
+      width: 25%;
+      max-width: 200px;
+      float: left;
+      margin-right: 20px;
+    }
+
+	.section1 {
+    grid-area: a;
+  }
+	.section1 {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width:1200px) {
+  article {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas:
+        "a b b e"
+        "c c c ."
+        ". d d .";
+  }
+}
