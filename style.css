@@ -3,6 +3,33 @@
 /*p {
     color: red;
 }*/
+header h1 {
+	order:2;
+	fontsize:2em;
+}
+nav ul {
+	display: none;
+}
+@media screen and (min-width: 700px){
+
+nav ul{
+	display: flex;
+}
+nav ul li{
+	border-top: none;
+}
+	.menu-trigger{
+		display: none;
+	}
+	header h1{
+		order: 1;
+	}
+	nav {
+		order: 2;
+	}
+}
+
+
 
 p {
 	color: #666666;
